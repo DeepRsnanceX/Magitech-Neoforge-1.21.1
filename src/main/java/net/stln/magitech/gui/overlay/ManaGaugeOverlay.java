@@ -36,8 +36,9 @@ public class ManaGaugeOverlay implements LayeredDraw.Layer {
         Player player = ClientHelper.getPlayer();
         if (player == null) return;
         if (!Minecraft.getInstance().options.hideGui && !player.isSpectator() && !Minecraft.getInstance().gui.getDebugOverlay().showDebugScreen()) {
-            int x = guiGraphics.guiWidth() - 64;
-            int y = guiGraphics.guiHeight() / 3;
+            int x = 0;
+            int sex = guiGraphics.guiHeight() / 4;
+            int y = sex - sex;
             if (CuriosApi.getCuriosInventory(player).isPresent()) {
                 ICuriosItemHandler curiosInventory = CuriosApi.getCuriosInventory(player).get();
                 if (curiosInventory.getCurios().get("threadbound") != null) {
